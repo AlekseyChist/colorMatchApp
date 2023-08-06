@@ -6,6 +6,7 @@ import java.util.Arrays;
 public class ColorMatrix {
 
     private static ColorMenuItem[] colors = {
+            new ColorMenuItem("Select color", 0x00ffffff, ColorIdEnum.EMPTY),//нужно подумать как поменять с костыля на рабочий вариант
             new ColorMenuItem("white", 0xfff9f4f2, ColorIdEnum.WHITE),
             new ColorMenuItem("grey",0xff6d7174, ColorIdEnum.GREY),
             new ColorMenuItem("black", 0xff111111, ColorIdEnum.BLACK),

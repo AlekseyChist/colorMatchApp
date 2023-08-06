@@ -12,5 +12,6 @@ public enum ColorIdEnum {
     PURPLE,
     BIEGE,
     BROWN,
-    PINK
+    PINK,
+    EMPTY
 }

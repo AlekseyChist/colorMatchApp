@@ -22,6 +22,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
@@ -40,23 +41,24 @@ public class AutoMatchActivity extends AppCompatActivity implements AdapterView.
         spin.setOnItemSelectedListener(this);
 
         ColorArrayAdapter aa = new ColorArrayAdapter(this, R.layout.color_menu_item, colors);
-        aa.setDropDownViewResource(R.layout.color_menu_item);
-
         //Setting the ArrayAdapter data on the Spinner
         spin.setAdapter(aa);
+        spin.setSelection(Adapter.NO_SELECTION, false);
+
+        aa.setDropDownViewResource(R.layout.color_menu_item);
     }
 
 
     //Performing action onItemSelected and onNothing selected
     @Override
     public void onItemSelected(AdapterView<?> arg0, View arg1, int position,long id) {
-
         Toast.makeText(getApplicationContext(), colors[position].getText(), Toast.LENGTH_SHORT).show();
 
-
-        ColorMenuItem[] items = ColorMatrix.GetMatchingColors(colors[position].getId());
-        for(int i = 0; i<items.length; i++)
-            Log.d("AutoColor", items[i].getText());
+        if (colors[position].getId() !=  ColorIdEnum.EMPTY) {
+            ColorMenuItem[] items = ColorMatrix.GetMatchingColors(colors[position].getId());
+            for (int i = 0; i < items.length; i++)
+                Log.d("AutoColor", items[i].getText());
+        }
     }
 
     @Override
