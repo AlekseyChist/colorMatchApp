@@ -29,19 +29,7 @@ import android.widget.Toast;
 
 public class AutoMatchActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
-    ColorMenuItem[] colors = {
-            new ColorMenuItem("white", 0xfff9f4f2),
-            new ColorMenuItem("grey",0xff6d7174),
-            new ColorMenuItem("black", 0xff111111),
-            new ColorMenuItem("red", 0xffaa0011),
-            new ColorMenuItem("yellow", 0xfffbb714),
-            new ColorMenuItem("blue", 0xff3f6ad7),
-            new ColorMenuItem("green", 0xffa4b909),
-            new ColorMenuItem("orange", 0xfff27b12),
-            new ColorMenuItem("purple", 0xff9400d3),
-            new ColorMenuItem("biege", 0xffbaab98),
-            new ColorMenuItem("brown", 0xff966a4a),
-            new ColorMenuItem("pink", 0xffffc0cb)};
+    ColorMenuItem[] colors = ColorMatrix.GetAllColors();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +50,13 @@ public class AutoMatchActivity extends AppCompatActivity implements AdapterView.
     //Performing action onItemSelected and onNothing selected
     @Override
     public void onItemSelected(AdapterView<?> arg0, View arg1, int position,long id) {
-        Toast.makeText(getApplicationContext(), colors[position].getText(), Toast.LENGTH_LONG).show();
-        Log.d("AutoColor", "Hello");
+
+        Toast.makeText(getApplicationContext(), colors[position].getText(), Toast.LENGTH_SHORT).show();
+
+
+        ColorMenuItem[] items = ColorMatrix.GetMatchingColors(colors[position].getId());
+        for(int i = 0; i<items.length; i++)
+            Log.d("AutoColor", items[i].getText());
     }
 
     @Override
