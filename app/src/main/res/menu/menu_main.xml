@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/action_settings" android:title="Just a title"
+        android:orderInCategory="100" app:showAsAction="never" app:actionLayout="@layout/color_menu_item">
+    </item>
+<!--    <item android:id="@+id/color_settings" android:title="Just a color" app:showAsAction="never">-->
+<!--&lt;!&ndash;        <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">&ndash;&gt;-->
+<!--            <solid android:color="#B0D7D8D2"/>-->
+<!--&lt;!&ndash;        </shape>&ndash;&gt;-->
+<!--    </item>-->
+</menu>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C5C5C5"
+    android:backgroundTint="#DADBD5"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_starter_screen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#D7D8D2">
+
+
+        <TextView
+            android:id="@+id/app_name"
+            android:layout_width="348dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/arima_madurai_light"
+            android:paddingTop="6dp"
+            android:paddingBottom="8dp"
+            android:text="Best Color Matching App"
+            android:textAlignment="center"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#404040"
+            android:textSize="30dp" />
+
+        <ImageView
+            android:id="@+id/app_start_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:paddingTop="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/app_background_starter_screen" />
+
+        <Button
+            android:id="@+id/button_start"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:background="@drawable/custom_button"
+            android:fontFamily="@font/arima_madurai_extralight"
+            android:text="Start"
+            android:textAlignment="center"
+            android:textSize="21sp" />
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

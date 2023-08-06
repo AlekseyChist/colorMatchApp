@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="color_picker">
+        <item name="picker_1">#FFFFFF</item>
+        <item name="picker_1">#808080</item>
+        <item name="picker_1">#4A4A4A</item>
+        <item name="picker_1">#000000</item>
+        <item name="picker_1">#C6A978</item>
+        <item name="picker_1">#001247</item>
+        <item name="picker_1">#6C3B00</item>
+        <item name="picker_1">#72A300</item>
+        <item name="picker_1">#61BBD6</item>
+        <item name="picker_1">#F60000</item>
+        <item name="picker_1">#FBC500</item>
+        <item name="picker_1">#26FF00</item>
+        <item name="picker_1">#8E0000</item>
+        <item name="picker_1">#CC4100</item>
+        <item name="picker_1">#EE00FF</item>
+        <item name="picker_1">#0022FF</item>
+
+    </string-array>
+</resources>
