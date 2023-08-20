@@ -8,13 +8,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.function.Consumer;
 
-public class FirstSpinnerListener implements AdapterView.OnItemSelectedListener {
+public class SpinnerListener implements AdapterView.OnItemSelectedListener {
     private AppCompatActivity appCompatActivity;
     private ColorArrayAdapter adapter;
     private Consumer<ColorMenuItem[]> notifyMethod;
 
     //Performing action onItemSelected and onNothing selected
-    public FirstSpinnerListener(AppCompatActivity appCompatActivity, ColorArrayAdapter adapter, Consumer<ColorMenuItem[]> notifyMethod)
+    public SpinnerListener(AppCompatActivity appCompatActivity, ColorArrayAdapter adapter, Consumer<ColorMenuItem[]> notifyMethod)
     {
         this.appCompatActivity = appCompatActivity;
         this.adapter = adapter;

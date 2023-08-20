@@ -22,16 +22,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class AutoMatchActivity extends AppCompatActivity implements ListUpdateListener{
 
-    ColorMenuItem[] colors = ColorMatrix.GetAllColors();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auto_color_match);
         //Getting the instance of Spinner and applying OnItemSelectedListener on it
-        ColorArrayAdapter adapter = new ColorArrayAdapter(this, R.layout.color_menu_item, colors);
+        ColorArrayAdapter adapter = new ColorArrayAdapter(this, R.layout.color_menu_item, ColorMatrix.GetAllColors());
         Spinner spin = (Spinner) findViewById(R.id.simplespinner);
-        spin.setOnItemSelectedListener(new FirstSpinnerListener(this, adapter, this::UpdateList1));
+        spin.setOnItemSelectedListener(new SpinnerListener(this, adapter, this::UpdateList1));
 
 
         //Setting the ArrayAdapter data on the Spinner
@@ -46,7 +44,7 @@ public class AutoMatchActivity extends AppCompatActivity implements ListUpdateLi
     public void UpdateList1(ColorMenuItem[] colorsList) {
         ColorArrayAdapter adapter = new ColorArrayAdapter(this, R.layout.color_menu_item, colorsList);
         Spinner spin = (Spinner) findViewById(R.id.simplespinner2);
-        spin.setOnItemSelectedListener(new FirstSpinnerListener(this, adapter, this::UpdateList2));
+        spin.setOnItemSelectedListener(new SpinnerListener(this, adapter, this::UpdateList2));
 
         //Setting the ArrayAdapter data on the Spinner
         spin.setAdapter(adapter);
@@ -59,7 +57,7 @@ public class AutoMatchActivity extends AppCompatActivity implements ListUpdateLi
     public void UpdateList2(ColorMenuItem[] colorsList) {
         ColorArrayAdapter adapter = new ColorArrayAdapter(this, R.layout.color_menu_item, colorsList);
         Spinner spin = (Spinner) findViewById(R.id.simplespinner3);
-        spin.setOnItemSelectedListener(new FirstSpinnerListener(this, adapter, null));
+        spin.setOnItemSelectedListener(new SpinnerListener(this, adapter, null));
 
         //Setting the ArrayAdapter data on the Spinner
         spin.setAdapter(adapter);
