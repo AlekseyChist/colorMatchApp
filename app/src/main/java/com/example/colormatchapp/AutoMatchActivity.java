@@ -14,21 +14,13 @@
 //}
 
 package com.example.colormatchapp;
-
-//import android.support.v7.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
 import android.widget.Adapter;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.Toast;
 
-public class AutoMatchActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+import androidx.appcompat.app.AppCompatActivity;
+
+public class AutoMatchActivity extends AppCompatActivity implements ListUpdateListener{
 
     ColorMenuItem[] colors = ColorMatrix.GetAllColors();
 
@@ -37,32 +29,42 @@ public class AutoMatchActivity extends AppCompatActivity implements AdapterView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auto_color_match);
         //Getting the instance of Spinner and applying OnItemSelectedListener on it
+        ColorArrayAdapter adapter = new ColorArrayAdapter(this, R.layout.color_menu_item, colors);
         Spinner spin = (Spinner) findViewById(R.id.simplespinner);
-        spin.setOnItemSelectedListener(this);
+        spin.setOnItemSelectedListener(new FirstSpinnerListener(this, adapter, this::UpdateList1));
 
-        ColorArrayAdapter aa = new ColorArrayAdapter(this, R.layout.color_menu_item, colors);
+
         //Setting the ArrayAdapter data on the Spinner
-        spin.setAdapter(aa);
+        spin.setAdapter(adapter);
         spin.setSelection(Adapter.NO_SELECTION, false);
 
-        aa.setDropDownViewResource(R.layout.color_menu_item);
+        adapter.setDropDownViewResource(R.layout.color_menu_item);
     }
 
 
-    //Performing action onItemSelected and onNothing selected
     @Override
-    public void onItemSelected(AdapterView<?> arg0, View arg1, int position,long id) {
-        Toast.makeText(getApplicationContext(), colors[position].getText(), Toast.LENGTH_SHORT).show();
+    public void UpdateList1(ColorMenuItem[] colorsList) {
+        ColorArrayAdapter adapter = new ColorArrayAdapter(this, R.layout.color_menu_item, colorsList);
+        Spinner spin = (Spinner) findViewById(R.id.simplespinner2);
+        spin.setOnItemSelectedListener(new FirstSpinnerListener(this, adapter, this::UpdateList2));
 
-        if (colors[position].getId() !=  ColorIdEnum.EMPTY) {
-            ColorMenuItem[] items = ColorMatrix.GetMatchingColors(colors[position].getId());
-            for (int i = 0; i < items.length; i++)
-                Log.d("AutoColor", items[i].getText());
-        }
+        //Setting the ArrayAdapter data on the Spinner
+        spin.setAdapter(adapter);
+        spin.setSelection(Adapter.NO_SELECTION, false);
+
+        adapter.setDropDownViewResource(R.layout.color_menu_item);
     }
 
     @Override
-    public void onNothingSelected(AdapterView<?> arg0) {
-        // TODO Auto-generated method stub
+    public void UpdateList2(ColorMenuItem[] colorsList) {
+        ColorArrayAdapter adapter = new ColorArrayAdapter(this, R.layout.color_menu_item, colorsList);
+        Spinner spin = (Spinner) findViewById(R.id.simplespinner3);
+        spin.setOnItemSelectedListener(new FirstSpinnerListener(this, adapter, null));
+
+        //Setting the ArrayAdapter data on the Spinner
+        spin.setAdapter(adapter);
+        spin.setSelection(Adapter.NO_SELECTION, false);
+
+        adapter.setDropDownViewResource(R.layout.color_menu_item);
     }
 }

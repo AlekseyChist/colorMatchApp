@@ -2,15 +2,12 @@ package com.example.colormatchapp;
 
 
 import android.content.Context;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,11 +16,15 @@ import androidx.annotation.Nullable;
 
 public class ColorArrayAdapter extends ArrayAdapter<ColorMenuItem> {
 
-    private ColorMenuItem[] objects;
+    private ColorMenuItem[] colorMenuItems;
 
-    public ColorArrayAdapter(@NonNull Context context, int resource, @NonNull ColorMenuItem[] objects) {
-        super(context, resource, objects);
-        this.objects = objects;
+    public ColorMenuItem[] getItems() {
+        return colorMenuItems;
+    }
+
+    public ColorArrayAdapter(@NonNull Context context, int resource, @NonNull ColorMenuItem[] colorMenuItems) {
+        super(context, resource, colorMenuItems);
+        this.colorMenuItems = colorMenuItems;
     }
 
     public View getView(int position, View convertView, ViewGroup parent){
@@ -45,7 +46,7 @@ public class ColorArrayAdapter extends ArrayAdapter<ColorMenuItem> {
          *
          * Therefore, i refers to the current Item object.
          */
-        ColorMenuItem i = objects[position];
+        ColorMenuItem i = colorMenuItems[position];
 
         if (i != null) {
 
@@ -87,7 +88,7 @@ public class ColorArrayAdapter extends ArrayAdapter<ColorMenuItem> {
             v = inflater.inflate(R.layout.color_menu_item, null);
         }
 
-        ColorMenuItem i = objects[position];
+        ColorMenuItem i = colorMenuItems[position];
 
         if (i != null) {
 

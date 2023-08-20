@@ -1,11 +1,10 @@
 package com.example.colormatchapp;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class ColorMatrix {
 
-    private static ColorMenuItem[] colors = {
+    private static final ColorMenuItem[] colors = {
             new ColorMenuItem("Select color", 0x00ffffff, ColorIdEnum.EMPTY),//нужно подумать как поменять с костыля на рабочий вариант
             new ColorMenuItem("white", 0xfff9f4f2, ColorIdEnum.WHITE),
             new ColorMenuItem("grey",0xff6d7174, ColorIdEnum.GREY),
@@ -44,12 +43,13 @@ public class ColorMatrix {
     public static ColorMenuItem[] GetMatchingColors(ColorIdEnum colorId) {
 
         ArrayList<ColorMenuItem> colorArray = new ArrayList<>();
+        colorArray.add(colors[0]); //добавляем пустышку "select color"
 
-        boolean[] colorRow = colorMatrix[colorId.ordinal()];
+        boolean[] colorRow = colorMatrix[colorId.toInt()];
         for (int i=0; i<colorRow.length; i++) {
             if (colorRow[i] == true) {
                 for (int j=0; j<colors.length; j++) {
-                    if (colors[j].getId().ordinal() == i) {
+                    if (colors[j].getId().toInt() == i) {
                         colorArray.add(colors[j]);
                     }
                 }
