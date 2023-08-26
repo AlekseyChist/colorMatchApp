@@ -41,7 +41,7 @@ public class AutoMatchActivity extends AppCompatActivity implements ListUpdateLi
 
 
     @Override
-    public void UpdateList1(ColorMenuItem[] colorsList) {
+    public void UpdateList1(ColorMenuItem[] colorsList, Boolean disable) {
         ColorArrayAdapter adapter = new ColorArrayAdapter(this, R.layout.color_menu_item, colorsList);
         Spinner spin = (Spinner) findViewById(R.id.simplespinner2);
         spin.setOnItemSelectedListener(new SpinnerListener(this, adapter, this::UpdateList2));
@@ -50,11 +50,13 @@ public class AutoMatchActivity extends AppCompatActivity implements ListUpdateLi
         spin.setAdapter(adapter);
         spin.setSelection(Adapter.NO_SELECTION, false);
 
+        spin.setEnabled(!disable);
+
         adapter.setDropDownViewResource(R.layout.color_menu_item);
     }
 
     @Override
-    public void UpdateList2(ColorMenuItem[] colorsList) {
+    public void UpdateList2(ColorMenuItem[] colorsList, Boolean disable) {
         ColorArrayAdapter adapter = new ColorArrayAdapter(this, R.layout.color_menu_item, colorsList);
         Spinner spin = (Spinner) findViewById(R.id.simplespinner3);
         spin.setOnItemSelectedListener(new SpinnerListener(this, adapter, null));
@@ -62,6 +64,8 @@ public class AutoMatchActivity extends AppCompatActivity implements ListUpdateLi
         //Setting the ArrayAdapter data on the Spinner
         spin.setAdapter(adapter);
         spin.setSelection(Adapter.NO_SELECTION, false);
+
+        spin.setEnabled(!disable);
 
         adapter.setDropDownViewResource(R.layout.color_menu_item);
     }

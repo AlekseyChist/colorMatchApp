@@ -1,5 +1,7 @@
 package com.example.colormatchapp;
 
+import androidx.annotation.NonNull;
+
 import java.util.ArrayList;
 
 public class ColorMatrix {
@@ -35,15 +37,12 @@ public class ColorMatrix {
     };
 
     public static ColorMenuItem[] GetAllColors() {
-
         return colors;
-
     }
 
     public static ColorMenuItem[] GetMatchingColors(ColorIdEnum colorId) {
 
-        ArrayList<ColorMenuItem> colorArray = new ArrayList<>();
-        colorArray.add(colors[0]); //добавляем пустышку "select color"
+        ArrayList<ColorMenuItem> colorArray = GetEmptyColorList();
 
         boolean[] colorRow = colorMatrix[colorId.toInt()];
         for (int i=0; i<colorRow.length; i++) {
@@ -61,7 +60,22 @@ public class ColorMatrix {
         items = colorArray.toArray(items);
 
         return items;
+    }
 
+    @NonNull
+    public static ArrayList<ColorMenuItem> GetEmptyColorList() {
+        ArrayList<ColorMenuItem> colorArray = new ArrayList<>();
+        colorArray.add(colors[0]); //добавляем пустышку "select color"
+        return colorArray;
+    }
 
+    public static ColorMenuItem[] GetEmptyColorArray() {
+//        ArrayList<ColorMenuItem> list = GetEmptyColorList();
+//        ColorMenuItem[] items = new ColorMenuItem[list.size()];
+//        items = list.toArray(items);
+        ColorMenuItem[] items = new ColorMenuItem[1];
+        items[0] = colors[0];
+
+        return items;
     }
 }
