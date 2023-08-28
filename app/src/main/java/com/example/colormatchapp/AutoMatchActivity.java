@@ -14,6 +14,7 @@
 //}
 
 package com.example.colormatchapp;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.widget.Adapter;
 import android.widget.Spinner;
@@ -26,6 +27,7 @@ public class AutoMatchActivity extends AppCompatActivity implements ListUpdateLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auto_color_match);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         //Getting the instance of Spinner and applying OnItemSelectedListener on it
         ColorArrayAdapter adapter = new ColorArrayAdapter(this, R.layout.color_menu_item, ColorMatrix.GetAllColors());
         Spinner spin = (Spinner) findViewById(R.id.simplespinner);

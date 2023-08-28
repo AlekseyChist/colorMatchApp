@@ -6,15 +6,15 @@
     android:background="#D7D8D2">
 
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="100dp"
-    android:paddingLeft="100dp"
-    android:paddingRight="100dp"
-    android:paddingTop="100dp"
-    android:clickable="true"
-    android:focusable="true">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingLeft="50dp"
+        android:paddingTop="100dp"
+        android:paddingRight="50dp"
+        android:paddingBottom="100dp">
 
         <TextView
             android:id="@+id/auto_color_activity_name_heading"
@@ -40,33 +40,36 @@
 
         <Spinner
             android:id="@+id/simplespinner"
-            android:layout_below="@+id/choice_explanation"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/choice_explanation"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
             android:clickable="true"
-            android:focusable="true"/>
+            android:focusable="true"
+            android:textAlignment="center" />
 
         <Spinner
             android:id="@+id/simplespinner2"
-            android:layout_below="@+id/simplespinner"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/simplespinner"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
             android:clickable="true"
-            android:focusable="true"/>
+            android:focusable="true"
+            android:textAlignment="center" />
 
         <Spinner
             android:id="@+id/simplespinner3"
-            android:layout_below="@+id/simplespinner2"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/simplespinner2"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
             android:clickable="true"
-            android:focusable="true"/>
+            android:focusable="true"
+            android:textAlignment="center" />
 
     </RelativeLayout>
 
