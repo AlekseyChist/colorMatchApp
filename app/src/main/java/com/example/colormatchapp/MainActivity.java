@@ -16,8 +16,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
+
 public class MainActivity extends AppCompatActivity {
 
+    private boolean switchOn = false;
+    LottieAnimationView buttonAnimation;
     //animation
     Animation topAnim, bottomAnim, scaleUp, scaleDown;
     ImageView image;
@@ -40,12 +44,32 @@ public class MainActivity extends AppCompatActivity {
         image = findViewById(R.id.app_start_picture);
         appName = findViewById(R.id.app_name);
         buttonStart = findViewById(R.id.button_start);
+        buttonAnimation = findViewById(R.id.buttonAnimationView);
 
 
         image.setAnimation(bottomAnim);
         appName.setAnimation(topAnim);
-        buttonStart.setAnimation(bottomAnim);
-        buttonStart.setOnTouchListener(new View.OnTouchListener() {
+        //buttonStart.setAnimation(bottomAnim);
+
+        buttonStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (switchOn) {
+                    buttonAnimation.setMinAndMaxProgress(0.0f, 1.0f);
+                    buttonAnimation.playAnimation();
+                    switchOn = false;
+                } else {
+                    buttonAnimation.setMinAndMaxProgress(0.0f, 1.0f);
+                    buttonAnimation.playAnimation();
+                    switchOn = true;
+                }
+                openSelectionActivity();
+            }
+
+        });
+
+
+        /*buttonStart.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 openSelectionActivity();
@@ -57,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
                 return true;
             }
-        });
+        });*/
 
     }
 

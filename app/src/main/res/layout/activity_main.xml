@@ -37,6 +37,8 @@
             android:scaleType="centerCrop"
             android:src="@drawable/app_background_starter_screen" />
 
+
+
         <Button
             android:id="@+id/button_start"
             android:layout_width="100dp"
@@ -47,6 +49,16 @@
             android:text="Start"
             android:textAlignment="center"
             android:textSize="21sp" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/buttonAnimationView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="false"
+            app:lottie_speed="@integer/material_motion_duration_short_1"
+            app:lottie_rawRes="@raw/round" />
 
 
     </androidx.cardview.widget.CardView>

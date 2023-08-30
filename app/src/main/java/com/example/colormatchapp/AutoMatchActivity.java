@@ -27,7 +27,7 @@ public class AutoMatchActivity extends AppCompatActivity implements ListUpdateLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auto_color_match);
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);//ограничивает поворот дисплея, не дает скинуться цветам при смене ориентации экрана.
         //Getting the instance of Spinner and applying OnItemSelectedListener on it
         ColorArrayAdapter adapter = new ColorArrayAdapter(this, R.layout.color_menu_item, ColorMatrix.GetAllColors());
         Spinner spin = (Spinner) findViewById(R.id.simplespinner);

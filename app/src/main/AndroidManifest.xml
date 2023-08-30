@@ -13,6 +13,9 @@
         android:theme="@style/Theme.ColorMatchApp"
         tools:targetApi="31">
         <activity
+            android:name=".auto_color_selection_result"
+            android:exported="false" />
+        <activity
             android:name=".SelfMatchActivity"
             android:exported="false" />
         <activity
