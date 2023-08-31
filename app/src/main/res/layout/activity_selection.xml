@@ -29,7 +29,7 @@
             android:layout_below="@+id/app_name_heading"
             android:fontFamily="@font/arima_madurai_light"
             android:gravity="center"
-            android:text="This App will help you in your everyday routine of combining colors for your clothes. You can choose to color match yourself or to use a suggested color scheme we have developed. "
+            android:text="Welcome to the exciting world of fashion and style with our cutting-edge color matching app! Whether you're a fashionista searching for the ideal combination or simply someone who loves putting together stunning outfits, we've got you covered."
             android:textColor="#202020"
             android:textSize="14dp" />
 

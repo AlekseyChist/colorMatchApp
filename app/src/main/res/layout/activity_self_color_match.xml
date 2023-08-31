@@ -6,15 +6,15 @@
     android:background="#D7D8D2">
 
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="100dp"
-        android:paddingLeft="100dp"
-        android:paddingRight="100dp"
-        android:paddingTop="100dp"
         android:clickable="true"
-        android:focusable="true">
+        android:focusable="true"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="1dp">
 
         <TextView
             android:id="@+id/self_color_activity_name_heading"
@@ -22,7 +22,6 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/arima_madurai_medium"
             android:gravity="center"
-            android:paddingTop="10dp"
             android:text="Manual color match"
             android:textColor="#202020"
             android:textSize="26dp" />
@@ -34,46 +33,50 @@
             android:layout_below="@+id/self_color_activity_name_heading"
             android:fontFamily="@font/arima_madurai_light"
             android:gravity="center"
-            android:text="You can mash any colors you want to see the result made by yourself : "
+            android:text="For the connoisseurs of creativity and those who relish a hands-on approach, our manual color matching option offers a personalized experience like no other. Dive into a palette of endless possibilities and curate your own color combinations. Mix and match shades, experiment with contrasts, and let your imagination run wild. This feature empowers you to express your unique style while providing a canvas to bring your fashion fantasies to life. "
             android:textColor="#202020"
-            android:textSize="16dp" />
+            android:textSize="14dp" />
 
         <Spinner
             android:id="@+id/selfcolorspinner"
-            android:layout_below="@+id/choice_explanation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/choice_explanation"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
             android:clickable="true"
-            android:focusable="true"/>
+            android:focusable="true"
+            android:textAlignment="center" />
 
         <Spinner
             android:id="@+id/selfcolorspinner2"
-            android:layout_below="@+id/selfcolorspinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/selfcolorspinner"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
             android:clickable="true"
-            android:focusable="true"/>
+            android:focusable="true"
+            android:textAlignment="center" />
 
         <Spinner
             android:id="@+id/selfcolorspinner3"
-            android:layout_below="@+id/selfcolorspinner2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/selfcolorspinner2"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
             android:clickable="true"
-            android:focusable="true"/>
+            android:focusable="true"
+            android:textAlignment="center" />
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/buttonAnimationView"
-            android:layout_below="@+id/selfcolorspinner3"
             android:layout_width="250dp"
             android:layout_height="250dp"
+            android:layout_below="@+id/selfcolorspinner3"
             android:layout_gravity="center"
+            android:layout_marginLeft="40dp"
             android:layout_marginTop="10dp"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"

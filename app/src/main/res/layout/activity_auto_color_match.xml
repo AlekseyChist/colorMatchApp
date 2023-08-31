@@ -11,10 +11,10 @@
         android:layout_height="match_parent"
         android:clickable="true"
         android:focusable="true"
-        android:paddingLeft="50dp"
+        android:paddingLeft="20dp"
         android:paddingTop="30dp"
-        android:paddingRight="50dp"
-        android:paddingBottom="100dp">
+        android:paddingRight="20dp"
+        android:paddingBottom="1dp">
 
         <TextView
             android:id="@+id/auto_color_activity_name_heading"
@@ -33,10 +33,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/auto_color_activity_name_heading"
             android:fontFamily="@font/arima_madurai_light"
-            android:gravity="center"
-            android:text="This selection is made according to all trends of color matching to ease your choice. Please start with the first color you want to match. Our app will eliminate all unmatching colors: "
+            android:gravity="center_horizontal"
+            android:text="Embark on a journey of effortless elegance with our automated color matching feature. Let technology be your guide as our advanced algorithms analyze your selected clothing item and swiftly curate a list of perfectly coordinated colors. Make sure you're always dressed to impress: "
             android:textColor="#202020"
-            android:textSize="16dp" />
+            android:textSize="14dp" />
 
         <Spinner
             android:id="@+id/simplespinner"
@@ -73,10 +73,11 @@
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/buttonAnimationView"
-            android:layout_below="@+id/simplespinner3"
             android:layout_width="250dp"
             android:layout_height="250dp"
+            android:layout_below="@+id/simplespinner3"
             android:layout_gravity="center"
+            android:layout_marginLeft="40dp"
             android:layout_marginTop="10dp"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
