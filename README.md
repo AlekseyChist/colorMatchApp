@@ -1,6 +1,6 @@
 # colorMatchApp
 Best clothes color mathcing app
-Я через боль пишу свою первую апку с помощью мастера Йоды Даниила.
+Я через боль пишу свою первую апку.
 
 
 Activity: Discover Your Perfect Color Match
